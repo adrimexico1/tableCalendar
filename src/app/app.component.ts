@@ -39,8 +39,10 @@ export class AppComponent implements OnInit {
 
   getDaysFromDate(month, year) {
 
-    var date = moment.utc().format('YYYY-MM-DD HH:mm:ss');
-    const startDate = moment.utc(`${year}-09-01T00:00:00`).local(); 
+    // var date = moment.utc().format('YYYY-MM-DD HH:mm:ss');
+    // const startDate = moment.utc(`${year}-09-01T00:00:00`).local(); 
+    const startDate = moment.utc(`${year}/${month}/01`)
+    
     console.log(startDate);
     //Crea el objeto de tipo date con los parametros de mes y año 
     const endDate = startDate.clone().endOf('month')
@@ -54,7 +56,8 @@ export class AppComponent implements OnInit {
 
     const arrayDays = Object.keys([...Array(numberDays)]).map((a: any) => {
       a = parseInt(a) + 1;
-      const dayObject = moment(`${year}-09-${a}`);
+      //const dayObject = moment(`${year}-09-${a}`);
+      const dayObject = moment(`${year}-${month}-${a}`);
       return {
         name: dayObject.format("dddd"),
         value: a,
