@@ -1,0 +1,50 @@
+[
+    {
+       "Codigo":"OPEHM-47",
+       "nombre":"Adrián Sánchez Contreras",
+       "Tarea":"Realizar cambio versión de googlemaps y librería de boostrap.",
+       "Planeado":"5hrs",
+       "Esperado":"100%",
+       "Llevado":"0%"
+    },  
+    {
+      "Codigo":"MOT2-583",
+      "nombre":"Adrián Sánchez Contreras",
+      "Tarea":"Sukarne - Subir despachos masivos",
+      "Planeado":"5hrs",
+      "Esperado":"100%",
+      "Llevado":"0%"
+   },
+   {
+      "Codigo":"MOT2-528",
+      "nombre":"Adrián Sánchez Contreras",
+      "Tarea":"Despacho - edición de datos de viaje ANTES DE INICIARSE",
+      "Planeado":"5hrs",
+      "Esperado":"100%",
+      "Llevado":"0%"
+   },
+   {
+      "Codigo":"AIS-61",
+      "nombre":"Adrián Sánchez Contreras",
+      "Tarea":"Analizar API de JIRA para reportes",
+      "Planeado":"5hrs",
+      "Esperado":"100%",
+      "Llevado":"0%"
+   },
+   {
+      "Codigo":"OPEHM-51",
+      "nombre":"Adrián Sánchez Contreras",
+      "Tarea":"Liberación 28 HOLCIM 20/07/2022 - Corrección en Deprecated 'event.path', Realizar cambio versión de googlemaps y librería de boostrap .",
+      "Planeado":"5hrs",
+      "Esperado":"100%",
+      "Llevado":"0%"
+   },
+   {
+      "Codigo":"MOT2-509",
+      "nombre":"Adrián Sánchez Contreras",
+      "Tarea":"En viajes en curso / Iniciados - se muestra información de cierre de viaje y esta es anterior a la fecha de inicio del viaje",
+      "Planeado":"5hrs",
+      "Esperado":"100%",
+      "Llevado":"0%"
+   }
+ ]
