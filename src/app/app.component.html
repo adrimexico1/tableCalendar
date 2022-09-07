@@ -6,6 +6,13 @@
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	  <div>
+		<button (click)="changeMonth(-1)" class="btn-prev">👈</button>
+	</div>
+	<h1>{{dateSelect | date:'MMMM, yyyy'}}</h1>
+	<div>
+		<button (click)="changeMonth(1)" class="btn-next">👉</button>
+	</div>
 	  <tr>
 		<th scope="col">Codigo</th>
 		<th scope="col">Nombre</th>
@@ -14,7 +21,10 @@
 		<th scope="col">Esperado</th>
 		<th scope="col">Llevado</th>
 		<!-- <th scope="col">Imagen</th> -->
-		<th scope="col">Barra</th>
+		<!-- <th scope="col">Barra</th> -->
+		<th (click)="clickDay(day)" [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
+		   *ngFor="let day of monthSelect;let first = first">
+			  <span>{{day?.value}}</span></th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -45,16 +55,6 @@
 	</tbody>
   </table> 
   <meta charset='utf-8' /> 
-  
-  
-  
-  <section>
-	<div></div>
-	<button id='up'>☝️</button>
-	<button id='down'>👇</button>
-  </section>
-  
-  
   
   
   <div class="wrapper-calendar">
