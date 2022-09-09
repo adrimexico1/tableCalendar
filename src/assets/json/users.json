@@ -5,7 +5,7 @@
        "Tarea":"Realizar cambio versión de googlemaps y librería de boostrap.",
        "Planeado":"5hrs",
        "Esperado":"100%",
-       "Llevado":"0%"
+       "Llevado":"50%"
     },  
     {
       "Codigo":"MOT2-583",
@@ -13,7 +13,7 @@
       "Tarea":"Sukarne - Subir despachos masivos",
       "Planeado":"5hrs",
       "Esperado":"100%",
-      "Llevado":"0%"
+      "Llevado":"20%"
    },
    {
       "Codigo":"MOT2-528",
@@ -21,7 +21,7 @@
       "Tarea":"Despacho - edición de datos de viaje ANTES DE INICIARSE",
       "Planeado":"5hrs",
       "Esperado":"100%",
-      "Llevado":"0%"
+      "Llevado":"30%"
    },
    {
       "Codigo":"AIS-61",
@@ -29,7 +29,7 @@
       "Tarea":"Analizar API de JIRA para reportes",
       "Planeado":"5hrs",
       "Esperado":"100%",
-      "Llevado":"0%"
+      "Llevado":"40%"
    },
    {
       "Codigo":"OPEHM-51",
@@ -37,7 +37,7 @@
       "Tarea":"Liberación 28 HOLCIM 20/07/2022 - Corrección en Deprecated 'event.path', Realizar cambio versión de googlemaps y librería de boostrap .",
       "Planeado":"5hrs",
       "Esperado":"100%",
-      "Llevado":"0%"
+      "Llevado":"100%"
    },
    {
       "Codigo":"MOT2-509",
