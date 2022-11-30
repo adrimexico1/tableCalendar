@@ -11,9 +11,8 @@ import * as moment from 'moment';
 export class AppComponent implements OnInit {
 
    // Exporto los datos del archivo JSON a la  vista 
-   Usuarios: any = listadeUsuarios;
-
-  week: any = [
+  Usuarios: any = listadeUsuarios;
+  week: any = [    
     "Lunes",
     "Martes",
     "Miercoles",
@@ -34,21 +33,17 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getDaysFromDate(10, 2022)
+    this.getDaysFromDate(moment().format('MM'), moment().format('YYYY'))
   }
 
-  getDaysFromDate(month, year) {
-
-    // var date = moment.utc().format('YYYY-MM-DD HH:mm:ss');
-    // const startDate = moment.utc(`${year}-09-01T00:00:00`).local(); 
-    const startDate = moment.utc(`${year}/${month}/01`)
-    
-    console.log(startDate);
+  getDaysFromDate(month, year) {    
+    const startDate = moment(`${year}/${month}/01`)
     //Crea el objeto de tipo date con los parametros de mes y año 
-    const endDate = startDate.clone().endOf('month')
+    const endDate = moment(startDate).endOf('month');
+    console.log(startDate.toDate());
+    console.log(endDate.toDate());
     //Para finalizar el mes, clone para que no se itere <-
     this.dateSelect = startDate;
-
     const diffDays = endDate.diff(startDate, 'days', true)
     //Nos trae la cantidad de Dias de diferencia entre inicio y fin
     const numberDays = Math.round(diffDays);
@@ -56,8 +51,7 @@ export class AppComponent implements OnInit {
 
     const arrayDays = Object.keys([...Array(numberDays)]).map((a: any) => {
       a = parseInt(a) + 1;
-      //const dayObject = moment(`${year}-09-${a}`);
-      const dayObject = moment(`${year}-${month}-${a}`);
+      const dayObject = moment(`${year}/${month}/${a}`);
       return {
         name: dayObject.format("dddd"),
         value: a,

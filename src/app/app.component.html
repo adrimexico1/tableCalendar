@@ -1,86 +1,87 @@
-  
+<h1>{{dateSelect | date:'MMMM, yyyy'}}</h1>
+<div>
+	<button (click)="changeMonth(-1)" class="btn btn-primary">Anterior</button>
+	<button (click)="changeMonth(1)" class="btn btn-primary">Siguiente</button>
+</div>
 <table class="table">
 	<thead class="thead-dark">
-	  <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	  <div>
-		<button (click)="changeMonth(-1)" class="btn-prev">👈</button>
-	</div>
-	<h1>{{dateSelect | date:'MMMM, yyyy'}}</h1>
-	<div>
-		<button (click)="changeMonth(1)" class="btn-next">👉</button>
-	</div>
-	  <tr>
-		<th scope="col">Codigo</th>
-		<th scope="col">Nombre</th>
-		<th scope="col">Tarea</th>
-		<th scope="col">Planeado</th>
-		<th scope="col">Esperado</th>
-		<th scope="col">Llevado</th>
-		<!-- <th scope="col">Imagen</th> -->
-		<!-- <th scope="col">Barra</th> -->
-		<th (click)="clickDay(day)" [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
-		   *ngFor="let day of monthSelect;let first = first">
-			  <span>{{day?.value}}</span></th>
-	  </tr>
+		<tr>
+			<th>Codigo</th>
+			<th >Nombre</th>
+			<th >Tarea</th>
+			<th >Planeado</th>
+			<th >Esperado</th>
+			<th >Llevado</th>
+			<!-- <th scope="col">Imagen</th> -->
+			<!-- <th scope="col">Barra</th> -->
+			<th [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
+				*ngFor="let day of monthSelect;let first = first">
+				<span>{{day?.value}} </span>
+			</th>
+		</tr>
 	</thead>
 	<tbody>
-	  <tr *ngFor="let usuario of Usuarios">
-		<th scope="row">{{usuario.Codigo}}</th>
-		<td>{{usuario.nombre}}</td>
-		<td>{{usuario.Tarea}}</td>
-		<td>{{usuario.Planeado}}</td>
-		<td>{{usuario.Esperado}}</td>
-		<td>{{usuario.Llevado}}</td>
-		<td>
-		  <!-- <img src="https://i.pinimg.com/originals/ff/eb/82/ffeb82ebe4251aaf9b86386247d9da74.png" width="30px" class="img-fluid" alt="{{usuario.nombre}}"> -->
-		</td>
-		<td> 
-		  <div class="progress">
-			<div class="progress-bar progress-bar-success" role="progressbar"  [ngStyle]="{ width: usuario.Llevado }">
-			  <!-- Free Space -->
-			  
-			</div>
-			<!-- <div class="progress-bar progress-bar-warning" role="progressbar" style="width:10%"	>
+		<tr *ngFor="let usuario of Usuarios">
+			<td>{{usuario.Codigo}}</td>
+			<td>{{usuario.nombre}}</td>
+			<td>{{usuario.Tarea}}</td>
+			<td>{{usuario.Planeado}}</td>
+			<td>{{usuario.Esperado}}</td>
+			<td>{{usuario.Llevado}}</td>
+			<td>
+				<div class="progress" style="width: 30px;">
+					<div class="progress-bar progress-bar-success" role="progressbar"
+						[ngStyle]="{ width: usuario.Llevado }">
+						<!-- Free Space -->
+					</div>
+					<!-- <div class="progress-bar progress-bar-warning" role="progressbar" style="width:10%"	>
 			  Warning
 			</div> -->
-			<!-- <div class="progress-bar progress-bar-danger" role="progressbar" style="width:20%">
+					<!-- <div class="progress-bar progress-bar-danger" role="progressbar" style="width:20%">
 			  Danger
 			</div> -->
-		  </div>
-		</td>
-	  </tr>
+				</div>
+			</td>
+			<td>
+				<div class="progress" style="width: 30px;">
+					<div class="progress-bar progress-bar-success" role="progressbar"
+						[ngStyle]="{ width: usuario.Llevado }">
+						<!-- Free Space -->
+					</div>
+					<!-- <div class="progress-bar progress-bar-warning" role="progressbar" style="width:10%"	>
+			  Warning
+			</div> -->
+					<!-- <div class="progress-bar progress-bar-danger" role="progressbar" style="width:20%">
+			  Danger
+			</div> -->
+				</div>
+			</td>
+
+		</tr>
 	</tbody>
-  </table> 
-  <meta charset='utf-8' /> 
-  
-  
-  <div class="wrapper-calendar">
-	  <div class="header-calendar">
-		  <div>
-			  <button (click)="changeMonth(-1)" class="btn-prev">Antes</button>
-		  </div>
-		  <h1>{{dateSelect | date:'MMMM, yyyy'}}</h1>
-		  <div>
-			  <button (click)="changeMonth(1)" class="btn-next">Siguiente</button>
-		  </div>
-	  </div>
-	  <ol>
-		  <li *ngFor="let day of week" class="day-name">{{day | slice:0:3}}</li>
-  
-		  <li (click)="clickDay(day)" [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
-		   *ngFor="let day of monthSelect;let first = first">
-			  <span>{{day?.value}}</span>
-		  </li>
-	  </ol>
-  </div>
-  
-  <hr>
-  <div>
-	  Fecha: {{dateValue | date}}
-  </div>
-  
-  
+</table>
+
+<div class="wrapper-calendar">
+	<div class="header-calendar">
+		<div>
+			<button (click)="changeMonth(-1)" class="btn-prev">Antes</button>
+		</div>
+		<h1>{{dateSelect | date:'MMMM, yyyy'}}</h1>
+		<div>
+			<button (click)="changeMonth(1)" class="btn-next">Siguiente</button>
+		</div>
+	</div>
+	<ol>
+		<li *ngFor="let day of week" class="day-name">{{day | slice:0:3}}</li>
+
+		<li (click)="clickDay(day)" [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
+			*ngFor="let day of monthSelect;let first = first">
+			<span>{{day?.value}}</span>
+		</li>
+	</ol>
+</div>
+
+<hr>
+<div>
+	<!-- Fecha: {{dateValue | date}} -->
+</div>
